@@ -41,7 +41,7 @@ fi
 ###
 # Calling Github to get the latest version
 ###
-ORIGINAL_GITHUB_REPO="netbox-community/netbox"
+ORIGINAL_GITHUB_REPO="boomerangguru/netbox_cicd"
 GITHUB_REPO="${GITHUB_REPO-$ORIGINAL_GITHUB_REPO}"
 URL_RELEASES="https://api.github.com/repos/${GITHUB_REPO}/releases"
 
