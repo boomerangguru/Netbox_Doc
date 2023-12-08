@@ -20,10 +20,10 @@ branch       The branch or tag to build. Required.
 ${_BOLD}You can use the following ENV variables to customize the build:${_CLEAR}
 
 SRC_ORG     Which fork of netbox to use (i.e. github.com/\${SRC_ORG}/\${SRC_REPO}).
-            ${_GREEN}Default:${_CLEAR} netbox-community
+            ${_GREEN}Default:${_CLEAR} boomerangguru
             
 SRC_REPO    The name of the repository to use (i.e. github.com/\${SRC_ORG}/\${SRC_REPO}).
-            ${_GREEN}Default:${_CLEAR} netbox
+            ${_GREEN}Default:${_CLEAR} netbox_cicd
             
 URL         Where to fetch the code from.
             Must be a git repository. Can be private.
@@ -45,8 +45,8 @@ TAG         The version part of the image tag.
 
 IMAGE_NAMES The names used for the image including the registry
             Used for tagging the image.
-            ${_GREEN}Default:${_CLEAR} docker.io/netboxcommunity/netbox
-            ${_CYAN}Example:${_CLEAR} 'docker.io/netboxcommunity/netbox quay.io/netboxcommunity/netbox'
+            ${_GREEN}Default:${_CLEAR} docker.io/boomerang11/netbox
+            ${_CYAN}Example:${_CLEAR} 'docker.io/boomerang11/netbox
 
 DOCKER_TAG  The name of the tag which is applied to the image.
             Useful for pushing into another registry than hub.docker.com.
@@ -107,23 +107,23 @@ ${_BOLD}Examples:${_CLEAR}
 
 ${0} master
             This will fetch the latest 'master' branch, build a Docker Image and tag it
-            'netboxcommunity/netbox:latest'.
+            'boomerang11/netbox:latest'.
 
 ${0} develop
             This will fetch the latest 'develop' branch, build a Docker Image and tag it
-            'netboxcommunity/netbox:snapshot'.
+            'boomerang11/netbox:snapshot'.
 
 ${0} v2.6.6
             This will fetch the 'v2.6.6' tag, build a Docker Image and tag it
-            'netboxcommunity/netbox:v2.6.6' and 'netboxcommunity/netbox:v2.6'.
+            'boomerang11/netbox:v2.6.6' and 'boomerang11/netbox:v2.6'.
 
 ${0} develop-2.7
             This will fetch the 'develop-2.7' branch, build a Docker Image and tag it
-            'netboxcommunity/netbox:develop-2.7'.
+            'boomerang11/netbox:develop-2.7'.
 
 SRC_ORG=cimnine ${0} feature-x
             This will fetch the 'feature-x' branch from https://github.com/cimnine/netbox.git,
-            build a Docker Image and tag it 'netboxcommunity/netbox:feature-x'.
+            build a Docker Image and tag it 'boomerang11/netbox:feature-x'.
 
 SRC_ORG=cimnine DOCKER_ORG=cimnine ${0} feature-x
             This will fetch the 'feature-x' branch from https://github.com/cimnine/netbox.git,
@@ -143,7 +143,7 @@ source ./build-functions/check-commands.sh
 source ./build-functions/get-public-image-config.sh
 source ./build-functions/gh-functions.sh
 
-IMAGE_NAMES="${IMAGE_NAMES-docker.io/netboxcommunity/netbox}"
+IMAGE_NAMES="${IMAGE_NAMES-docker.io/boomerang11/netbox}"
 IFS=' ' read -ra IMAGE_NAMES <<<"${IMAGE_NAMES}"
 
 ###
@@ -161,8 +161,8 @@ gh_echo "::group::⤵️ Fetching the NetBox source code"
 ###
 # Variables for fetching the NetBox source
 ###
-SRC_ORG="${SRC_ORG-netbox-community}"
-SRC_REPO="${SRC_REPO-netbox}"
+SRC_ORG="${SRC_ORG-boomerangguru}"
+SRC_REPO="${SRC_REPO-netbox_cicd}"
 NETBOX_BRANCH="${1}"
 URL="${URL-https://github.com/${SRC_ORG}/${SRC_REPO}.git}"
 NETBOX_PATH="${NETBOX_PATH-.netbox}"
@@ -254,7 +254,7 @@ fi
 # Variables for tagging the docker image
 ###
 DOCKER_REGISTRY="${DOCKER_REGISTRY-docker.io}"
-DOCKER_ORG="${DOCKER_ORG-netboxcommunity}"
+DOCKER_ORG="${DOCKER_ORG-boomerang11}"
 DOCKER_REPO="${DOCKER_REPO-netbox}"
 case "${NETBOX_BRANCH}" in
 master)
