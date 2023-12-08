@@ -20,9 +20,9 @@ source ./build-functions/gh-functions.sh
 # of the Docker Image that is to be used
 if [ "${1}x" != "x" ]; then
   # Use the command line argument
-  export IMAGE="netboxcommunity/netbox:${1}"
+  export IMAGE="boomerang11/netbox:${1}"
 else
-  export IMAGE="${IMAGE-netboxcommunity/netbox:latest}"
+  export IMAGE="${IMAGE-boomerang11/netbox:latest}"
 fi
 
 # Ensure that an IMAGE is defined
