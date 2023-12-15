@@ -65,7 +65,7 @@ DOCKER_FROM The base image to use.
 
 BUILDX_PLATFORMS
             Specifies the platform(s) to build the image for.
-            ${_CYAN}Example:${_CLEAR} 'linux/amd64,linux/arm64'
+            ${_CYAN}Example:${_CLEAR} 'linux/amd64'
             ${_GREEN}Default:${_CLEAR} 'linux/amd64'
 
 BUILDX_BUILDER_NAME
