@@ -46,7 +46,7 @@ TAG         The version part of the image tag.
 IMAGE_NAMES The names used for the image including the registry
             Used for tagging the image.
             ${_GREEN}Default:${_CLEAR} docker.io/boomerang11/netbox
-            ${_CYAN}Example:${_CLEAR} 'docker.io/boomerang11/netbox
+            ${_CYAN}Example:${_CLEAR} 'docker.io/boomerang11/netbox'
 
 DOCKER_TAG  The name of the tag which is applied to the image.
             Useful for pushing into another registry than hub.docker.com.
@@ -165,7 +165,7 @@ SRC_ORG="${SRC_ORG-boomerangguru}"
 SRC_REPO="${SRC_REPO-netbox_cicd}"
 NETBOX_BRANCH="${1}"
 URL="${URL-https://github.com/${SRC_ORG}/${SRC_REPO}.git}"
-NETBOX_PATH="${NETBOX_PATH-.netbox}"
+NETBOX_PATH="${NETBOX_PATH-.netbox_docker}"
 
 ###
 # Fetching the NetBox source
