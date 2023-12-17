@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEFAULT_REPO=netbox-community/netbox-docker
+DEFAULT_REPO=boomerangguru/netbox_dockernetbox_docker
 REPO="${REPO-${DEFAULT_REPO}}"
 
 echomoji() {
