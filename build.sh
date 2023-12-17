@@ -165,7 +165,7 @@ SRC_ORG="${SRC_ORG-boomerangguru}"
 SRC_REPO="${SRC_REPO-netbox_cicd}"
 NETBOX_BRANCH="${1}"
 URL="${URL-https://github.com/${SRC_ORG}/${SRC_REPO}.git}"
-NETBOX_PATH="${NETBOX_PATH-.netbox_docker}"
+NETBOX_PATH="${NETBOX_PATH-.netbox}"
 
 ###
 # Fetching the NetBox source
